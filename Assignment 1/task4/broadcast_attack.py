@@ -52,5 +52,5 @@ def recover_msg(N1, N2, N3, C1, C2, C3):
 
 def get_student_number():
     # TODO: Fill your student number here
-    return ""
+    return "3035745037"
     

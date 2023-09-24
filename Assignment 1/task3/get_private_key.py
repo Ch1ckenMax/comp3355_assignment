@@ -12,6 +12,9 @@ return result: True if n1 and n2 share the same prime number; otherwise, returns
 """
 def is_waldo(n1, n2):
     result = False
+
+    gcd(n1, n2)
+
     # TODO: Implement this function for Task 3
     return result
 
@@ -31,5 +34,5 @@ def get_private_key_from_n1_n2_e(n1, n2, e):
 
 def get_student_number():
     # TODO: Fill your student number here
-    return ""
+    return "3035745037"
     
