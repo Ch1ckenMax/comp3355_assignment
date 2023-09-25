@@ -17,7 +17,7 @@ def is_waldo(n1, n2):
 
     # Given the assumption that n1 and n2 are both product of two prime numbers
     # There is no way that their gcd is not a prime number and not equal to 1, otherwise, n1 and n2 has more than 1 prime factorization, which is a contradiction
-    # Hence, the divisor is either a prime number or 1
+    # Hence, the divisor is either a prime number or 1 (n1 and n2 are co-prime => no prime number divides n1 and n2)
     return divisor != 1
 
 """

@@ -46,9 +46,24 @@ return m: the plain text
 Note: m*m*m should be smaller than N1 * N2 * N3
 """
 def recover_msg(N1, N2, N3, C1, C2, C3):
-    m = 0
-    # TODO: Implement this function for Task 4
-    return m
+    # Find t1 such that N2 * N3 * t1 % N1 = 1 where t1 is a positive integer
+    t1 = modinv(N1, N2 * N3)
+
+    # Find t2 such that N1 * N3 * t2 % N2 = 1 where t2 is a positive integer
+    t2 = modinv(N2, N1 * N3)
+
+    # Find t3 such that N1 * N2 * t3 % N3 = 1 where t3 is a positive integer
+    t3 = modinv(N3, N1 * N2)
+
+    # Then, m^3 can be found by:
+    mCube = C1 * t1 * N2 * N3 + C2 * t2 * N1 * N3 + C3 * t3 * N1 * N2
+    
+    # Make sure that mCube is less than N1 * N2 * N3
+    if mCube > N1 * N2 * N3:
+        k = mCube // (N1 * N2 * N3)
+        mCube = mCube - k * (N1 * N2 * N3)
+
+    return root3(mCube)
 
 def get_student_number():
     # TODO: Fill your student number here
